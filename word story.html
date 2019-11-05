@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            font-size:70px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .borderInside {
+            height:100%;
+            width:50%;
+            padding:10px;
+            border: 2px solid black;
+            margin-left:445px;
+            background-color: lightgreen;
+            position: relative;
+            bottom: 30px;
+            
+        }
+
+        form {
+            text-align: center;
+        }
+
+        input {
+            float:right;
+            margin-right: 240px;
+            border-radius: 5px;
+            border: 2px solid white;
+            height:20px;
+            width:300px;
+            
+        }
+
+        button {
+           margin-left: 400px;
+           padding: 14px 40px;
+           
+        }
+
+        .borderOutside {
+            width:50%;
+            height:250px;
+            padding:10px;
+            border: 2px solid black;
+            margin-left: 445px;
+            background-color: lightgreen;
+            position:relative;
+            font-size:30px;
+        }
+
+        @media only screen and (max-width: 414px) {
+            h1 {
+               position: relative;
+               left:250px;
+            }
+
+            .borderInside {
+                width:800px;
+                height:100%;
+                position:relative;
+                right:420px;
+                font-size: 20px;
+            }
+
+            .borderOutside {
+                position:relative;
+                width:800px;
+                height:700px;
+                right:420px;
+                
+            }
+
+            button {
+                position:relative;
+                right:70px;
+            }
+
+            input{
+                font-size: 18px;
+            } 
+
+            
+        }
+
+
+
+    </style>
+    <body>
+
+            <h1>Word Story</h1>
+        <div class="borderInside">
+
+            <form action="/action_page.php">
+              <ul id="registerList">
+                Boy Name: <input type="text" name="boyName" id="boyName">
+                <br><br>
+                Girl Name: <input type="text" name="girlName" id="girlName">
+                <br><br>
+                Geological formation: <input type="text" name="geology" id="geology">
+                <br><br>
+                Verb: <input type="text" name="verb" id="Verb">
+                <br><br>
+                Container: <input type="text" name="container" id="container">
+                <br><br>
+                Liquid: <input type="text" name="liquid" id="liquid">
+                <br><br>
+                Body Part: <input type="text" name="bodyPart" id="bodyPart">
+                <br><br>
+                Ing verb: <input type="text" name="ingVerb" id="ingVerb">
+              </ul>
+            </form>
+
+            <br>
+
+            <button type="button" onclick="testResult()">Click me</button>
+
+            
+        </div>
+
+        <div class ="borderOutside">
+            <p id="demo">
+
+            </p>
+        </div>
+        <script>
+
+            
+
+            function testResult() {
+
+                var boyName = document.getElementById("boyName").value;
+
+                var girlName = document.getElementById("girlName").value;
+
+                var geology = document.getElementById("geology").value;
+
+                var verb = document.getElementById("Verb").value;
+
+                var container = document.getElementById("container").value;
+
+                var liquid = document.getElementById("liquid").value;
+
+                var bodyPart = document.getElementById("bodyPart").value;
+
+                var ingVerb = document.getElementById("ingVerb").value;
+
+                var result = boyName + " and " +  girlName + " went together up the " + geology + " to " + verb + " a "  + container + " to put " + liquid + " in it for your " + 
+                bodyPart + " and " + ingVerb;
+               
+                
+                document.getElementById("demo").innerHTML = result;
+            }
+
+            
+
+        </script>
+    </body>
+</head>
+</html>
